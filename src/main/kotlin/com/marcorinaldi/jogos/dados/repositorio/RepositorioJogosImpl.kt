@@ -2,14 +2,14 @@ package com.marcorinaldi.jogos.dados.repositorio
 
 import com.marcorinaldi.jogos.dados.api.ApiJogos
 import com.marcorinaldi.jogos.dados.api.ApiJogosImpl
+import com.marcorinaldi.jogos.dependencias.InjecaoDependencias
 import com.marcorinaldi.jogos.dominio.modelo.Jogo
 import com.marcorinaldi.jogos.dominio.repositorio.RepositorioJogos
 
 class RepositorioJogosImpl : RepositorioJogos {
 
-
     override fun buscarJogo(id: String): Jogo {
-        val api: ApiJogos = ApiJogosImpl()
+        val api = InjecaoDependencias.apiJogos()
         val resposta = api.buscarJogo(id)
         val jogo = Jogo(
             id = resposta.info.id,
