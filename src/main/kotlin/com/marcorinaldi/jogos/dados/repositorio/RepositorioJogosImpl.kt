@@ -9,7 +9,7 @@ class RepositorioJogosImpl : RepositorioJogos {
 
 
     override fun buscarJogo(id: String): Jogo {
-        val api: ApiJogos =ApiJogosImpl()
+        val api: ApiJogos = ApiJogosImpl()
         val resposta = api.buscarJogo(id)
         val jogo = Jogo(
             id = resposta.info.id,
