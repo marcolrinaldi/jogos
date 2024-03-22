@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class RespostaInfo(
     @SerializedName("steamAppID") val id: String,
-    @SerializedName("title") val name: String
+    @SerializedName("title") val nome: String
 )
